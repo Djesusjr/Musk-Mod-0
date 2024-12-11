@@ -5,3 +5,4 @@ dave
 
 # añadimos commit desde la fature-branch
 añadimos nueva funcionalidad
+añadimos segunda funcionalidad
