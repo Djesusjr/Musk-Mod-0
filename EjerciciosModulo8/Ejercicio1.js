@@ -17,7 +17,7 @@ function findWordsRepeat(texto) {
         textoOriginal.add(word);
       }
     }
-    return "Se repiten las siguientes palabras: "+Array.from(wordRepeat)
+    return `Se repiten las siguientes palabras: ${Array.from(wordRepeat)}`;
 }
 
 let texto = 'Recordar es fácil para quien tiene memoria, olvidar es difícil para quien tiene corazón, olvidar'
