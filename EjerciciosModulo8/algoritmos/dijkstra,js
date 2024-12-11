@@ -1,0 +1,14 @@
+/**
+ * función dijkstra(grafo, nodoOrigen)
+distancia = lista de infinito para cada nodo
+distancia[nodoOrigen] = 0
+colaPrioridad = cola de prioridad con nodoOrigen
+mientras colaPrioridad no esté vacía
+nodoActual = extraerMinimo(colaPrioridad)
+para cada vecino de nodoActual
+si distancia a vecino > distancia a nodoActual + peso de arista
+actualizar distancia a vecino
+insertar o actualizar vecino en colaPrioridad
+retornar distancia
+
+ */
