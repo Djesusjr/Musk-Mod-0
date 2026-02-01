@@ -1,4 +1,4 @@
-// Ejercicio 1: Creación de Cookies En Javascript
+// Parte 1: Fundamentos de las Cookies
 
 let fecha = new Date()
 
@@ -8,7 +8,7 @@ document.cookie = "userType=premium; expires="+ fecha.toUTCString()+";path/"
 
 document.cookie = "username=juan perez; path=/"
 
-// Ejercicio 2: Lectura de Cookies
+
 
 function getCookie(nombre) {
   let cookies = document.cookie;
@@ -37,7 +37,7 @@ if (authToken) {
     console.log('usuario no autenticado')
 }
 
-// Ejercicio 3: Modificación de Cookies
+// Parte 2: Modificación y Eliminación de Cookies
 
 document.cookie = "username=Maria Gomez; path=/;"
 
@@ -46,8 +46,6 @@ let nuevaFecha = new Date()
 nuevaFecha.setDate(nuevaFecha.getDate()+3)
 
 document.cookie = "userType=standard; expires="+nuevaFecha.toUTCString()+"; path=/";
-
-// Ejercicio 4: Eliminación de Cookies
 
 function deleteCookie(cookie){
   let expiresDate = new Date()
@@ -61,7 +59,7 @@ if( document.cookie.includes('cookie')){
 }else
   console.log('eliminada')
 
-// Ejercicio 5: Aplicación Práctica
+// Parte 3: Aplicaciones Prácticas y Retos
 
 function setTheme(theme) {
   let fecha = new Date()
@@ -121,4 +119,34 @@ function showPreferences(){
   }else{
     history.forEach((page) => console.log('- '+ page))
   }
+}
+
+
+function logIn(user) {
+  document.cookie = "user="+user+"; path=/"
+}
+
+logIn('musk')
+
+let sesion = getCookie("user")
+
+if (sesion) {
+  console.log('Usuario autenticado')
+}else {
+  console.log('Usuario no autenticado')
+}
+
+function logOut() {
+  let fecha = new Date()
+  fecha.setDate(fecha.getDate()-1)
+  document.cookie = "user=; expires="+fecha.toUTCString()+"; path=/"
+  sesion = getCookie("user")
+}
+
+logOut()
+
+if (sesion) {
+  console.log('Usuario autenticado')
+}else {
+  console.log('Usuario no autenticado')
 }
